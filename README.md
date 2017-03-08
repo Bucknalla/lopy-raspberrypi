@@ -10,4 +10,5 @@ Use a Raspberry Pi to control a LoPy over UART
 2. Ensure that the both the RPi and LoPy are powered.
 3. Upload the lopy/main.py script to the LoPy and reboot it via the button on the device.
 4. Run sendlora.py on the Raspberry Pi (ensure you have python and pyserial installed, $ pip instal pyserial)
+  - Note, you should run sendlora.py as superuser ($ sudo python3 sendlora.py)
 5. You can change the data in the sendlora.py script to send various payloads between the devices
