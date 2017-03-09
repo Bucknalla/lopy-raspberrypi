@@ -12,7 +12,6 @@ uart1 = UART(1, 115200, bits=8, parity=None, stop=1)
 uart1.init(baudrate=115200, bits=8, parity=None, stop=1, timeout_chars=2, pins=("P3", "P4"))
 uart1.write("Connected...")
 
-#P3/P4
 # Initialize LoRa in LORAWAN mode.
 lora = LoRa(mode=LoRa.LORAWAN)
 app_eui = binascii.unhexlify('AD A4 DA E3 AC 12 67 6B'.replace(' ',''))
@@ -25,6 +24,7 @@ while not lora.has_joined():
 
 print("Connected to the network.")
 
+# Open LoRaWAN socket
 s = socket.socket(socket.AF_LORA, socket.SOCK_RAW)
 s.setsockopt(socket.SOL_LORA, socket.SO_DR, 5)
 s.setblocking(True)
